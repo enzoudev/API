@@ -1,10 +1,23 @@
 <?php
 	include 'cors_policy.php';
 	include 'conexao.php';
+    //  GET Listar dados
+    //  POST Enviar dados para inserir
+    //  PUT Enviar dados para atualizar
+    //  DELETE Enviar dados para excluir
 
-    if($_SERVER['REQUEST_METHOD'] == 'GET')
+    // if($_SERVER['REQUEST_METHOD'] == 'GET')
 
-	$sql = "SELECT * FROM Categorias WHERE id =6";
+     // Obtém o corpo da solicitação POST
+    //  $data = file_get_contents("php://input");
+    //  // Decodifica o JSON para um objeto PHP
+    //  $requestData = json_decode($data);
+    //  // Agora você pode acessar os dados usando $requestData
+    //  $id = $requestData->id;
+ 
+    $id = 1;
+
+	$sql = "SELECT * FROM Categorias WHERE id=$id";
 
     $result = $connection->query($sql);
 
@@ -22,7 +35,7 @@
         $response = [
             'categorias' => 'Nenhuma categoria encontrada!'
         ];
-    }
+    // }
 
     echo json_encode($response);
 ?>
