@@ -19,7 +19,7 @@
 
 	$sql = "UPDATE Categorias VALUES id = $id";
 
-    if$result = $connection->query($sql) == true ) {
+    if($result = $connection->query($sql) == true ) {
         $response = [
             "mensagem": 'Categoria inserida com sucesso!'
         ]
@@ -30,4 +30,5 @@
     }
 
     echo json_encode($response);
+    // fim
 ?>
